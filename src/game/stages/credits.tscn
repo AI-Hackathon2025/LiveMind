@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://cp1vwto3k8jm"]
+
+[ext_resource type="Script" path="res://stages/credits.gd" id="1_e7nou"]
+[ext_resource type="PackedScene" uid="uid://bxgful0qlf8hp" path="res://assets/meshes/water.tscn" id="2_o27v2"]
+[ext_resource type="PackedScene" uid="uid://u4ee2m03qhgy" path="res://assets/meshes/raft.tscn" id="3_n1y15"]
+[ext_resource type="Script" path="res://game/shaking_camera.gd" id="4_7le0x"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cu3yc"]
+sky_top_color = Color(0.32549, 0.878431, 1, 1)
+sky_horizon_color = Color(0.32549, 0.878431, 1, 1)
+ground_bottom_color = Color(0.32549, 0.878431, 1, 1)
+ground_horizon_color = Color(0.32549, 0.878431, 1, 1)
+
+[sub_resource type="Sky" id="Sky_stswh"]
+sky_material = SubResource("ProceduralSkyMaterial_cu3yc")
+
+[sub_resource type="Environment" id="Environment_u5tls"]
+background_mode = 2
+sky = SubResource("Sky_stswh")
+ambient_light_color = Color(0.32549, 0.878431, 1, 1)
+ambient_light_sky_contribution = 0.5
+
+[sub_resource type="Animation" id="Animation_jdvs0"]
+resource_name = "credits_animation"
+length = 30.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5, 6, 9, 10, 13, 14, 17, 18, 21, 22, 25, 26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5, 10, 13, 18, 21, 26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Game by <details>", "Game by <details>", "Credits <text_1>", "Credits <text_1>", "Credits <text_2>", "Credits <text_2>"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(30),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"exit_to_menu"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhcb4"]
+_data = {
+"credits_animation": SubResource("Animation_jdvs0")
+}
+
+[node name="CreditsStage" type="Node"]
+script = ExtResource("1_e7nou")
+music_to_play = 2
+
+[node name="Water" parent="." instance=ExtResource("2_o27v2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Raft" parent="." instance=ExtResource("3_n1y15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.179593, 0)
+
+[node name="CameraHolder" type="Node3D" parent="Raft"]
+transform = Transform3D(0.97437, 0, 0.224951, 0, 1, 0, -0.224951, 0, 0.97437, 0.7, 0.7, -0.2)
+
+[node name="ShakingCamera" type="Camera3D" parent="Raft/CameraHolder"]
+script = ExtResource("4_7le0x")
+noise_speed = 4.0
+noise_multiplier = 0.15
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.649451, 0.760403, 0, -0.760403, 0.649451, 0, 0, 0)
+light_color = Color(0.996078, 1, 0.729412, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_u5tls")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qhcb4")
+}
+autoplay = "credits_animation"
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -156.0
+offset_right = 0.5
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Credits <text_2>"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponItemResource" load_steps=3 format=3 uid="uid://c3rgiuvapqirq"]
+
+[ext_resource type="Texture2D" uid="uid://bl154jnbri1x2" path="res://assets/textures/item_icons/pickaxe.png" id="1_vojjt"]
+[ext_resource type="Script" path="res://resources/item_resources/weapon_item_resource.gd" id="2_1lnie"]
+
+[resource]
+script = ExtResource("2_1lnie")
+damage = 20.0
+range = 1.5
+energy_change_per_use = -7
+item_key = 11
+display_name = "Pickaxe"
+icon = ExtResource("1_vojjt")
+description = "A robust tool forged for durability and precision. Perfect for mining valuable resources like coal or breaking through tough terrain, it’s essential for any determined explorer."
+is_eqippable = true

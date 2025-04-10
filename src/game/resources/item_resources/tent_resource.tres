@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://r0pcd4sllun6"]
+
+[ext_resource type="Texture2D" uid="uid://bbiilcl25knk2" path="res://assets/textures/item_icons/tent.png" id="1_qo6l6"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="2_kfwhi"]
+
+[resource]
+script = ExtResource("2_kfwhi")
+item_key = 17
+display_name = "Tent"
+icon = ExtResource("1_qo6l6")
+description = "A portable shelter that offers protection from the elements. Ideal for resting and staying safe during your travels, ensuring a good night’s sleep."
+is_eqippable = true

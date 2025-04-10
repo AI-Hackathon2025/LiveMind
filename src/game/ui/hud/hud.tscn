@@ -1,0 +1,142 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwe21tfxgtrxf"]
+
+[ext_resource type="Texture2D" uid="uid://bmlmof0x100hk" path="res://assets/textures/circle32.png" id="1_8ody2"]
+[ext_resource type="PackedScene" uid="uid://b2ciwmgcnvkyp" path="res://ui/custom_nodes/hotbar_slot.tscn" id="2_i6bys"]
+[ext_resource type="Script" path="res://ui/hud/hotbar_ui.gd" id="2_ut28u"]
+[ext_resource type="Script" path="res://ui/hud/player_stats_container.gd" id="4_sy0i4"]
+[ext_resource type="Texture2D" uid="uid://bg3p621gnoke6" path="res://assets/textures/square32.png" id="5_rehfd"]
+[ext_resource type="Script" path="res://game/managers/quest_manager.gd" id="6_cxrih"]
+[ext_resource type="Theme" uid="uid://c1es3kuofv7rt" path="res://resources/default_ui_theme.tres" id="6_iasxo"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8ody2")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HotbarSlotBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 32
+alignment = 1
+script = ExtResource("2_ut28u")
+
+[node name="HotbarSlot" parent="MarginContainer/HotbarSlotBoxContainer" instance=ExtResource("2_i6bys")]
+layout_mode = 2
+
+[node name="HotbarSlot2" parent="MarginContainer/HotbarSlotBoxContainer" instance=ExtResource("2_i6bys")]
+layout_mode = 2
+
+[node name="HotbarSlot3" parent="MarginContainer/HotbarSlotBoxContainer" instance=ExtResource("2_i6bys")]
+layout_mode = 2
+
+[node name="HotbarSlot4" parent="MarginContainer/HotbarSlotBoxContainer" instance=ExtResource("2_i6bys")]
+layout_mode = 2
+
+[node name="HotbarSlot5" parent="MarginContainer/HotbarSlotBoxContainer" instance=ExtResource("2_i6bys")]
+layout_mode = 2
+
+[node name="HotbarSlot6" parent="MarginContainer/HotbarSlotBoxContainer" instance=ExtResource("2_i6bys")]
+layout_mode = 2
+
+[node name="HotbarSlot7" parent="MarginContainer/HotbarSlotBoxContainer" instance=ExtResource("2_i6bys")]
+layout_mode = 2
+
+[node name="HotbarSlot8" parent="MarginContainer/HotbarSlotBoxContainer" instance=ExtResource("2_i6bys")]
+layout_mode = 2
+
+[node name="HotbarSlot9" parent="MarginContainer/HotbarSlotBoxContainer" instance=ExtResource("2_i6bys")]
+layout_mode = 2
+
+[node name="PlayerStatsContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 16
+script = ExtResource("4_sy0i4")
+
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/PlayerStatsContainer"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_rehfd")
+texture_progress = ExtResource("5_rehfd")
+tint_under = Color(0.203922, 0.203922, 0.203922, 1)
+tint_progress = Color(1, 0.2, 0.258824, 1)
+
+[node name="EnergyBar" type="TextureProgressBar" parent="MarginContainer/PlayerStatsContainer"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_rehfd")
+texture_progress = ExtResource("5_rehfd")
+tint_under = Color(0.203922, 0.203922, 0.203922, 1)
+tint_progress = Color(1, 0.760784, 0.360784, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 832.0
+offset_bottom = 432.0
+
+[node name="QuestContainer" type="VBoxContainer" parent="MarginContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+script = ExtResource("6_cxrih")
+
+[node name="ObjectivesLabel" type="Label" parent="MarginContainer2/QuestContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme = ExtResource("6_iasxo")
+theme_override_font_sizes/font_size = 30
+text = "Objectives:"
+autowrap_mode = 3
+
+[node name="QuestDataLabel" type="Label" parent="MarginContainer2/QuestContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+theme = ExtResource("6_iasxo")
+theme_override_colors/font_outline_color = Color(1, 0.690196, 0, 1)
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 3

@@ -1,0 +1,393 @@
+[gd_scene load_steps=20 format=3 uid="uid://ch7rglq25ac8"]
+
+[ext_resource type="Script" path="res://bulletins/player_menus/player_menu_base.gd" id="1_kffa3"]
+[ext_resource type="Texture2D" uid="uid://c0ae3uiptt3x2" path="res://assets/textures/panelInset_beige.png" id="1_qrxqr"]
+[ext_resource type="Texture2D" uid="uid://cn0kg68im56pf" path="res://assets/textures/cross.png" id="2_8si2b"]
+[ext_resource type="PackedScene" uid="uid://b5ifxc3w8gdfm" path="res://ui/custom_nodes/inventory_slot.tscn" id="2_cfs0b"]
+[ext_resource type="Texture2D" uid="uid://c1lvyjrgnoh0u" path="res://assets/textures/panelInset_brown.png" id="3_3e2up"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3kgog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cokfs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ausl1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ax1uh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63mtw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pghdo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vk57"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ge0l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mjnqh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvbxi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyblc"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_y3djb"]
+device = -1
+keycode = 4194306
+
+[sub_resource type="InputEventKey" id="InputEventKey_xjk2t"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_byub2"]
+events = [SubResource("InputEventKey_y3djb"), SubResource("InputEventKey_xjk2t")]
+
+[node name="PlayerMenuBase" type="Control"]
+z_index = -1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_kffa3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 160
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+split_offset = 560
+dragger_visibility = 1
+
+[node name="InventoryNinePatchRect" type="NinePatchRect" parent="MarginContainer/HBoxContainer/VSplitContainer"]
+layout_mode = 2
+texture = ExtResource("1_qrxqr")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 48
+patch_margin_bottom = 32
+
+[node name="InventoryContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -228.0
+offset_right = 408.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
+columns = 10
+
+[node name="InventorySlots" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots3" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots4" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots5" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots6" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots7" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots8" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots9" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots10" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots11" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots12" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots13" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots14" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots15" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots16" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots17" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots18" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots19" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots20" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots21" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots22" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots23" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots24" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots25" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots26" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots27" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots28" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots2" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots29" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots30" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots31" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots32" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots33" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots34" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots35" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots36" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots37" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots38" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots39" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots40" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots41" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots42" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots43" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots44" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots45" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots46" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots47" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots48" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots49" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots50" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots51" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots52" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots53" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots54" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots55" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots56" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots57" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots58" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots59" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="InventorySlots60" parent="MarginContainer/HBoxContainer/VSplitContainer/InventoryNinePatchRect/InventoryContainer" instance=ExtResource("2_cfs0b")]
+layout_mode = 2
+
+[node name="DescriptionNinePatchRect" type="NinePatchRect" parent="MarginContainer/HBoxContainer/VSplitContainer"]
+layout_mode = 2
+texture = ExtResource("1_qrxqr")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 48
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VSplitContainer/DescriptionNinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VSplitContainer/DescriptionNinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="ItemDescriptionLabel" type="Label" parent="MarginContainer/HBoxContainer/VSplitContainer/DescriptionNinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+autowrap_mode = 2
+
+[node name="ItemExtraInfoLabel" type="Label" parent="MarginContainer/HBoxContainer/VSplitContainer/DescriptionNinePatchRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="CloseButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3kgog")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_cokfs")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ausl1")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ax1uh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_63mtw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pghdo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1vk57")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_7ge0l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mjnqh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_gvbxi")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iyblc")
+shortcut = SubResource("Shortcut_byub2")
+icon = ExtResource("2_8si2b")
+expand_icon = true
+
+[node name="UtilityNinePatchRect" type="NinePatchRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_qrxqr")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 48
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("3_3e2up")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 48
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CloseButton" to="." method="close"]

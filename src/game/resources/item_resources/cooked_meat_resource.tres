@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ConsumableItemResource" load_steps=3 format=3 uid="uid://bdiv2m5sariqs"]
+
+[ext_resource type="Texture2D" uid="uid://bowefef5t0tfg" path="res://assets/textures/item_icons/cooked_meat.png" id="1_4x8cj"]
+[ext_resource type="Script" path="res://resources/item_resources/consumable_item_resource.gd" id="2_nfxvr"]
+
+[resource]
+script = ExtResource("2_nfxvr")
+health_change = 40
+energy_change = 10
+item_key = 9
+display_name = "Cooked Meat"
+icon = ExtResource("1_4x8cj")
+description = "A flavorful and hearty meal, cooked to perfection. Packed with protein, it restores health and keeps you nourished for long journeys."
+is_eqippable = true

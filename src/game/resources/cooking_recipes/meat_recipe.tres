@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CookinRecipeResource" load_steps=4 format=3 uid="uid://c7f0wxexc4vf1"]
+
+[ext_resource type="PackedScene" uid="uid://df73d5ulhh03k" path="res://assets/meshes/cooked_meat.tscn" id="1_1chxg"]
+[ext_resource type="Script" path="res://resources/cooking_recipes/cookin_recipe_resource.gd" id="1_gbmsv"]
+[ext_resource type="PackedScene" uid="uid://cex4wdimrqdb1" path="res://assets/meshes/raw_meat.tscn" id="3_nampo"]
+
+[resource]
+script = ExtResource("1_gbmsv")
+uncooked_item = 8
+uncooked_item_visuals = ExtResource("3_nampo")
+cooked_item = 9
+cooked_item_visuals = ExtResource("1_1chxg")
+cooking_time = 5.0

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://d03atpp3crao0"]
+
+[ext_resource type="Texture2D" uid="uid://bgwypxfnpos88" path="res://assets/textures/item_icons/flintstone.png" id="1_8la3p"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="2_wf5nn"]
+
+[resource]
+script = ExtResource("2_wf5nn")
+item_key = 7
+display_name = "Flintstone"
+icon = ExtResource("1_8la3p")
+description = "A superior resource known for its sharp edges and reliability. Perfect for crafting advanced tools or sparking fires with ease, it’s a vital asset for any skilled survivor."
+is_eqippable = false

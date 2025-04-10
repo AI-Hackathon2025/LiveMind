@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://5mf8aq24kp1h"]
+
+[ext_resource type="Resource" uid="uid://c7f0wxexc4vf1" path="res://resources/cooking_recipes/meat_recipe.tres" id="1_7et7b"]
+[ext_resource type="Texture2D" uid="uid://cc4vm1rqg7lng" path="res://assets/textures/item_icons/raw_meat.png" id="1_mdlf4"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="2_gcdfj"]
+
+[resource]
+script = ExtResource("2_gcdfj")
+item_key = 8
+display_name = "Raw Meat"
+icon = ExtResource("1_mdlf4")
+description = "
+A fresh cut of uncooked meat, rich in nutrients and essential for survival. Cook it to restore health and keep your strength up in the wild."
+is_eqippable = false
+cooking_recipe = ExtResource("1_7et7b")

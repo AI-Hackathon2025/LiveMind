@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponItemResource" load_steps=3 format=3 uid="uid://cudg2d8p32v7r"]
+
+[ext_resource type="Texture2D" uid="uid://bx0e62xgohtxl" path="res://assets/textures/item_icons/torch.png" id="1_8ppfk"]
+[ext_resource type="Script" path="res://resources/item_resources/weapon_item_resource.gd" id="2_clqm8"]
+
+[resource]
+script = ExtResource("2_clqm8")
+damage = 15.0
+range = 1.5
+energy_change_per_use = -3
+item_key = 16
+display_name = "Torch"
+icon = ExtResource("1_8ppfk")
+description = "A portable light source, perfect for illuminating dark places. Use it to explore caves, defend against threats, or find your way at night."
+is_eqippable = true

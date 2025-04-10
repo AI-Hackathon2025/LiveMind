@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ConsumableItemResource" load_steps=3 format=3 uid="uid://c8l427qcw0ug6"]
+
+[ext_resource type="Texture2D" uid="uid://dk38wk2vnxbr7" path="res://assets/textures/item_icons/mushroom.png" id="1_k6vva"]
+[ext_resource type="Script" path="res://resources/item_resources/consumable_item_resource.gd" id="1_qkfr4"]
+
+[resource]
+script = ExtResource("1_qkfr4")
+health_change = -10
+energy_change = 30
+item_key = 3
+display_name = "Mushroom"
+icon = ExtResource("1_k6vva")
+description = "A peculiar wild fungus that restores energy but at a cost. Eating it replenishes 30 energy but reduces health by 10. Consume with caution"
+is_eqippable = true

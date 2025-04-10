@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://3kspie27mcnj"]
+
+[ext_resource type="Script" path="res://actors/animals/animal.gd" id="1_cth6m"]
+[ext_resource type="PackedScene" uid="uid://d3nlyooax2rex" path="res://objects/hitbox/hitbox.tscn" id="1_ug67g"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y5xfc"]
+
+[node name="Animal" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 67
+script = ExtResource("1_cth6m")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="IdleTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+one_shot = true
+autostart = true
+
+[node name="WanderTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="DisappearAfterDeathTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="FleeTimer" type="Timer" parent="Timers"]
+
+[node name="Hitbox" parent="." instance=ExtResource("1_ug67g")]
+
+[node name="MeatSpawnMarker" type="Marker3D" parent="."]
+
+[node name="EyesMarker" type="Marker3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="AttackHitArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="VisionArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea"]
+shape = SubResource("SphereShape3D_y5xfc")
+
+[connection signal="timeout" from="Timers/IdleTimer" to="." method="_on_idle_timer_timeout"]
+[connection signal="timeout" from="Timers/WanderTimer" to="." method="_on_wander_timer_timeout"]
+[connection signal="timeout" from="Timers/DisappearAfterDeathTimer" to="." method="_on_disappear_after_death_timer_timeout"]
+[connection signal="timeout" from="Timers/FleeTimer" to="." method="_on_flee_timer_timeout"]
+[connection signal="register_hit" from="Hitbox" to="." method="take_hit"]
+[connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]
+[connection signal="body_exited" from="VisionArea" to="." method="_on_vision_area_body_exited"]

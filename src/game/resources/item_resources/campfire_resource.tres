@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://66erc4po135"]
+
+[ext_resource type="Texture2D" uid="uid://d3jiiw723qo82" path="res://assets/textures/item_icons/campfire.png" id="1_a66dt"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="2_ydem2"]
+
+[resource]
+script = ExtResource("2_ydem2")
+item_key = 12
+display_name = "Campfire"
+icon = ExtResource("1_a66dt")
+description = "A crackling source of warmth and light. It provides shelter from the cold, a place to cook food, and a beacon of safety in the dark."
+is_eqippable = true

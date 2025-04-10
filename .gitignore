@@ -172,3 +172,24 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Godot specific folders and files
+src/game/.godot/
+src/game/.import/
+src/game/.export/
+src/game/*.godot.user
+src/game/**/*.import 
+
+# Godot OS-specific files
+src/game/.DS_Store
+src/game/Thumbs.db
+
+# Editor-specific settings
+src/game/**/.vscode/          
+src/game/**/.idea/            
+src/game/**/*.sublime-workspace 
+src/game/**/*.sublime-project  
+
+# Godot Temporary files
+src/game/**/*.tmp
+src/game/**/*.swp

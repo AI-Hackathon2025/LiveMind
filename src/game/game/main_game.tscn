@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7y1jgh41a3b6"]
+
+[ext_resource type="Script" path="res://game/managers/stage_controller.gd" id="1_j2xqg"]
+[ext_resource type="Script" path="res://game/managers/hud_controller.gd" id="2_7vpu1"]
+[ext_resource type="Script" path="res://game/managers/music_controller.gd" id="4_ee56w"]
+[ext_resource type="Script" path="res://game/managers/sfx_controller.gd" id="5_qbqfc"]
+[ext_resource type="Script" path="res://game/managers/game_fade_controller.gd" id="6_xtcbe"]
+[ext_resource type="PackedScene" uid="uid://dwe21tfxgtrxf" path="res://ui/hud/hud.tscn" id="8_kl10b"]
+[ext_resource type="Script" path="res://game/managers/bulletin_controller.gd" id="9_bv1e8"]
+
+[node name="MainGame" type="Node"]
+
+[node name="StageController" type="Node" parent="."]
+script = ExtResource("1_j2xqg")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="HUDController" type="Node" parent="UILayer"]
+script = ExtResource("2_7vpu1")
+
+[node name="HUD" parent="UILayer/HUDController" instance=ExtResource("8_kl10b")]
+
+[node name="BulletinController" type="Node" parent="UILayer"]
+script = ExtResource("9_bv1e8")
+
+[node name="MusicController" type="AudioStreamPlayer" parent="."]
+script = ExtResource("4_ee56w")
+
+[node name="SFXController" type="AudioStreamPlayer" parent="."]
+script = ExtResource("5_qbqfc")
+
+[node name="GameFadeController" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("6_xtcbe")

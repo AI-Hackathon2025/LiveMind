@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://c5povnni0ef58"]
+
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="1_34o7t"]
+[ext_resource type="Texture2D" uid="uid://da7navnjldyp0" path="res://assets/textures/item_icons/plant.png" id="1_tkpum"]
+
+[resource]
+script = ExtResource("1_34o7t")
+item_key = 2
+display_name = "Plant"
+icon = ExtResource("1_tkpum")
+description = "A versatile resource that can be used for crafting basic tools or creating medicine. It’s lightweight and abundant, making it an essential item for survival."

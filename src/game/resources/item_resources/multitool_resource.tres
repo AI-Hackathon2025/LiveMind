@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://duqsdfck6iqek"]
+
+[ext_resource type="Texture2D" uid="uid://hcmje0xivabn" path="res://assets/textures/item_icons/multitool.png" id="1_6jexq"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="2_k4to0"]
+
+[resource]
+script = ExtResource("2_k4to0")
+item_key = 13
+display_name = "Multitool"
+icon = ExtResource("1_6jexq")
+description = "A versatile, all-in-one tool designed for various tasks. Whether chopping, digging, or building, this tool is a must-have for any survivor."
+is_eqippable = false

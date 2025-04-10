@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ConsumableItemResource" load_steps=3 format=3 uid="uid://df25kntv87un7"]
+
+[ext_resource type="Texture2D" uid="uid://cgvi48amhhhdw" path="res://assets/textures/item_icons/fruit.png" id="1_mlo8o"]
+[ext_resource type="Script" path="res://resources/item_resources/consumable_item_resource.gd" id="2_ytoty"]
+
+[resource]
+script = ExtResource("2_ytoty")
+health_change = 10
+energy_change = 40
+item_key = 4
+display_name = "Fruit"
+icon = ExtResource("1_mlo8o")
+description = "A natural, juicy treat full of vitamins and energy. Eating it restores health and provides a refreshing boost to your stamina."
+is_eqippable = true

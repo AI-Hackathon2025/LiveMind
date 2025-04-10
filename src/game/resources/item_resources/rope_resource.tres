@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://c8efms6lb1581"]
+
+[ext_resource type="Texture2D" uid="uid://bi3i70mqif7es" path="res://assets/textures/item_icons/rope.png" id="1_vokn4"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="2_18m6u"]
+
+[resource]
+script = ExtResource("2_18m6u")
+item_key = 14
+display_name = "Rope"
+icon = ExtResource("1_vokn4")
+description = "A strong, flexible cord that can be used for tying, building, or crafting advanced tools. Lightweight yet durable, it's a survival essential."

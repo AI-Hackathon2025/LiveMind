@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="CraftingBlueprintResource" load_steps=9 format=3 uid="uid://bctopwo1tiung"]
+
+[ext_resource type="Script" path="res://resources/crafting_blueprint_resources/blueprint_cost_data.gd" id="1_uc3me"]
+[ext_resource type="Script" path="res://resources/crafting_blueprint_resources/crafting_blueprint_resource.gd" id="2_bwkos"]
+
+[sub_resource type="Resource" id="Resource_xbwyp"]
+script = ExtResource("1_uc3me")
+item_key = 0
+amount = 2
+
+[sub_resource type="Resource" id="Resource_kcain"]
+script = ExtResource("1_uc3me")
+item_key = 1
+amount = 2
+
+[sub_resource type="Resource" id="Resource_wra8m"]
+script = ExtResource("1_uc3me")
+item_key = 7
+amount = 2
+
+[sub_resource type="Resource" id="Resource_uqk35"]
+script = ExtResource("1_uc3me")
+item_key = 8
+amount = 2
+
+[sub_resource type="Resource" id="Resource_0evfw"]
+script = ExtResource("1_uc3me")
+item_key = 6
+amount = 4
+
+[sub_resource type="Resource" id="Resource_tbly6"]
+script = ExtResource("1_uc3me")
+item_key = 14
+amount = 2
+
+[resource]
+script = ExtResource("2_bwkos")
+item_key = 13
+cost = Array[ExtResource("1_uc3me")]([SubResource("Resource_xbwyp"), SubResource("Resource_kcain"), SubResource("Resource_wra8m"), SubResource("Resource_uqk35"), SubResource("Resource_0evfw"), SubResource("Resource_tbly6")])
+needs_multitool = false
+needs_tinderbox = false

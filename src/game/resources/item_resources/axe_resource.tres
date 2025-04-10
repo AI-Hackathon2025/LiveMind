@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponItemResource" load_steps=3 format=3 uid="uid://klab8lsv2lu6"]
+
+[ext_resource type="Texture2D" uid="uid://bfneloba3fnih" path="res://assets/textures/item_icons/axe.png" id="1_87kqk"]
+[ext_resource type="Script" path="res://resources/item_resources/weapon_item_resource.gd" id="1_qkctx"]
+
+[resource]
+script = ExtResource("1_qkctx")
+damage = 20.0
+range = 1.5
+energy_change_per_use = -7
+item_key = 10
+display_name = "Axe"
+icon = ExtResource("1_87kqk")
+description = "A powerful tool crafted from sturdy materials. Ideal for chopping wood or defending against threats, it’s a must-have for any survivor."
+is_eqippable = true

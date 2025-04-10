@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://4a1um1jydwkg"]
+
+[ext_resource type="Script" path="res://game/managers/spawner.gd" id="1_fc3sg"]
+
+[node name="Spawner" type="Node3D"]
+script = ExtResource("1_fc3sg")
+
+[node name="Items" type="Node3D" parent="."]
+
+[node name="ConstructableHolder" type="Node3D" parent="."]

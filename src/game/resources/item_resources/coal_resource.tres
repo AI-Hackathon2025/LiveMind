@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://qoa8opnrp0eu"]
+
+[ext_resource type="Texture2D" uid="uid://cuhvbvwi3fxkx" path="res://assets/textures/item_icons/coal.png" id="1_764ae"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="2_hcck8"]
+
+[resource]
+script = ExtResource("2_hcck8")
+item_key = 6
+display_name = "Coal"
+icon = ExtResource("1_764ae")
+description = "A dark, combustible material, prized for its ability to fuel fires and power forges. An essential resource for crafting and survival in harsh conditions."
+is_eqippable = false

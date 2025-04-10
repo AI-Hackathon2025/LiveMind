@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwhuf400ml5sf"]
+
+[ext_resource type="Texture2D" uid="uid://nrkvaspsbrui" path="res://assets/textures/panel_blue.png" id="1_iyh6s"]
+[ext_resource type="Script" path="res://ui/custom_nodes/crafting_button.gd" id="2_lnsi3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mknc"]
+bg_color = Color(0.352941, 0.352941, 0.352941, 0.509804)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lttql"]
+bg_color = Color(0, 0, 0, 0.0784314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_161nc"]
+bg_color = Color(0, 0, 0, 0.156863)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_644qh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CraftingButton" type="TextureRect"]
+custom_minimum_size = Vector2(160, 160)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_iyh6s")
+script = ExtResource("2_lnsi3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="IconTextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6mknc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lttql")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_161nc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_644qh")

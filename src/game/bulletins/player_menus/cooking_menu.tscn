@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2gsdoq676oh6"]
+
+[ext_resource type="PackedScene" uid="uid://ch7rglq25ac8" path="res://bulletins/player_menus/player_menu_base.tscn" id="1_68nfr"]
+[ext_resource type="PackedScene" uid="uid://b5ifxc3w8gdfm" path="res://ui/custom_nodes/inventory_slot.tscn" id="2_mlpa3"]
+[ext_resource type="Script" path="res://bulletins/player_menus/cooking_menu.gd" id="2_rftkd"]
+[ext_resource type="Script" path="res://ui/custom_nodes/starting_cooking_slot.gd" id="3_43pja"]
+[ext_resource type="Texture2D" uid="uid://bg3p621gnoke6" path="res://assets/textures/square32.png" id="3_jfb4k"]
+[ext_resource type="Script" path="res://ui/custom_nodes/final_cooking_slot.gd" id="5_knl73"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqkb5"]
+bg_color = Color(0.32549, 0.32549, 0.32549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yafwk"]
+bg_color = Color(0, 0, 0, 0.235294)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_movw6"]
+bg_color = Color(0, 0, 0, 0.352941)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14l8l"]
+
+[node name="CookingMenu" instance=ExtResource("1_68nfr")]
+script = ExtResource("2_rftkd")
+
+[node name="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/NinePatchRect" index="0"]
+text = "cooking
+"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/CenterContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="StartingCookingSlot" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer" index="0" instance=ExtResource("2_mlpa3")]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_43pja")
+
+[node name="CookingProgressBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer" index="1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 48)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.005
+nine_patch_stretch = true
+texture_under = ExtResource("3_jfb4k")
+texture_progress = ExtResource("3_jfb4k")
+tint_under = Color(0.313858, 0.224798, 0.132566, 1)
+tint_progress = Color(0.803922, 0.509804, 0, 1)
+
+[node name="FinalCookingSlot" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer" index="2" instance=ExtResource("2_mlpa3")]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("5_knl73")
+
+[node name="CookButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" index="1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(196, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 28
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mqkb5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yafwk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_movw6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_14l8l")
+disabled = true
+text = "Cook"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/CookButton" to="." method="start_cooking"]

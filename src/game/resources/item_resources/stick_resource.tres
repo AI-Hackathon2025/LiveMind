@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://pye2glokwnrr"]
+
+[ext_resource type="Texture2D" uid="uid://u5dl3wam6vqv" path="res://assets/textures/item_icons/stick.png" id="1_47gvh"]
+[ext_resource type="Script" path="res://resources/item_resources/item_resource.gd" id="1_aeain"]
+
+[resource]
+script = ExtResource("1_aeain")
+item_key = 0
+display_name = "Stick"
+icon = ExtResource("1_47gvh")
+description = "A sturdy piece of wood, perfect for crafting handles, weapons, or kindling. An essential item for survival in the wilderness."

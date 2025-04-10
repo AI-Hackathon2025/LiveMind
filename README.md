@@ -1,2 +1,2 @@
 # LiveMind
-RealTime Adaptive Agents for AI-Survival Games
+RealTime Adaptive Agents for AI-Survival Games 

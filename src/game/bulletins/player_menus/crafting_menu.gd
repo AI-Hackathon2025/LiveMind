@@ -81,6 +81,17 @@ func crafting_button_pressed(item_key: ItemConfig.Keys) -> void:
 	# Add crafted item to the inventory
 	EventSystem.INV_add_item.emit(item_key)
 
+	# Dynamically build context for AI
+	var context := {
+		"event": "item_crafted",
+		"item_name": get_item_name_from_key(item_key),
+		"quantity": 1,
+		"location": "PlayerInventory",
+		"time": Time.get_datetime_string_from_system()
+	}
+		# Notify AI agent
+	EventSystem.AI_notify_agent_on_game_event.emit({"context": context})
+
 	# Update Quests
 	if item_key == ItemConfig.Keys.Rope:
 		EventSystem.QU_quest_finished.emit(QuestConfig.QuestKeys.WeaveRope)
@@ -93,3 +104,18 @@ func crafting_button_pressed(item_key: ItemConfig.Keys) -> void:
 
 	# Play crafting sound effect
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.Craft)
+
+# Helper function to convert enum to string
+func get_item_name_from_key(item_key: ItemConfig.Keys) -> String:
+	match item_key:
+		ItemConfig.Keys.Axe: return "Axe"
+		ItemConfig.Keys.Pickaxe: return "Pickaxe"
+		ItemConfig.Keys.Torch: return "Torch"
+		ItemConfig.Keys.Rope: return "Rope"
+		ItemConfig.Keys.Raft: return "Raft"
+		ItemConfig.Keys.Tent: return "Tent"
+		ItemConfig.Keys.Campfire: return "Campfire"
+		ItemConfig.Keys.Multitool: return "Multitool"
+		ItemConfig.Keys.Tinderbox: return "Tinderbox"
+		_:
+			return "Unknown Item"  # Fallback if the key is not listed

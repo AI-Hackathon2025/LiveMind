@@ -63,3 +63,6 @@ signal QU_quest_finished
 signal QU_quest_updated
 signal QU_show_quests
 signal QU_hide_quests
+
+# Signals for handling AI Agent
+signal AI_notify_agent_on_game_event

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://nni5chxtfcm5"]
+[gd_scene load_steps=11 format=3 uid="uid://nni5chxtfcm5"]
 
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_mfdqh"]
 [ext_resource type="Script" path="res://actors/player/interaction_ray_cast.gd" id="2_accth"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://game/managers/equipped_item_manager.gd" id="4_deuwt"]
 [ext_resource type="Script" path="res://game/managers/player_stats_manager.gd" id="7_b5gqj"]
 [ext_resource type="Script" path="res://game/managers/sleep_manager.gd" id="8_o1on0"]
+[ext_resource type="Script" path="res://game/managers/network_manager.gd" id="9_w76vb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g6bpw"]
 radius = 0.25
@@ -72,6 +73,9 @@ script = ExtResource("7_b5gqj")
 
 [node name="SleepManager" type="Node" parent="Managers"]
 script = ExtResource("8_o1on0")
+
+[node name="NetworkManager" type="Node" parent="Managers"]
+script = ExtResource("9_w76vb")
 
 [node name="FootstepAudioTimer" type="Timer" parent="."]
 one_shot = true

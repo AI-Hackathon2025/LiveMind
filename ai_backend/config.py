@@ -5,10 +5,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Azure OpenAI Credentials
-AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
-AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
-AZURE_OPENAI_DEPLOYMENT_NAME = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4o") # Your deployment name for GPT-4o
-AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-01") # Use an appropriate API version
+AZURE_OPENAI_API_KEY = "";
+AZURE_OPENAI_ENDPOINT =  "https://dasun-m9oi4nso-swedencentral.openai.azure.com";
+AZURE_OPENAI_DEPLOYMENT_NAME = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "mygpt-4.1") # Your deployment name for GPT-4o
+AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview") # Use an appropriate API version
 
 # Basic validation
 if not AZURE_OPENAI_API_KEY:

@@ -1,10 +1,10 @@
 import logging
 from fastapi import APIRouter, HTTPException, Body
 
-from .models import PlayerInput, NpcResponse, FallbackNpcResponse
-from .prompt_engine import create_prompt_messages
-from .azure_llm import get_llm_response
-from .memory import get_history, add_to_history
+from models import PlayerInput, NpcResponse, FallbackNpcResponse
+from prompt_engine import create_prompt_messages
+from azure_llm import get_llm_response
+from memory import get_history, add_to_history
 # Removed cache-related imports
 # from .cache import generate_cache_key, get_cached_response, store_response_in_cache
 

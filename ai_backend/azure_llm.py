@@ -3,8 +3,8 @@ import logging
 from openai import AzureOpenAI, APIError, RateLimitError, APIConnectionError
 from typing import List, Dict, Optional
 
-from . import config
-from .models import NpcResponse, FallbackNpcResponse
+import config
+from models import NpcResponse, FallbackNpcResponse
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -12,6 +12,13 @@ logger = logging.getLogger(__name__)
 # Initialize Azure OpenAI Client
 # Ensure you have set the required environment variables:
 # AZURE_OPENAI_API_KEY, AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_DEPLOYMENT_NAME
+
+print(f"""Configuration Check:
+Key: {config.AZURE_OPENAI_API_KEY[:5]}... (length: {len(config.AZURE_OPENAI_API_KEY)})
+Endpoint: {config.AZURE_OPENAI_ENDPOINT}
+Deployment: {config.AZURE_OPENAI_DEPLOYMENT_NAME}
+API Version: {config.AZURE_OPENAI_API_VERSION}""")
+
 try:
     client = AzureOpenAI(
         api_key=config.AZURE_OPENAI_API_KEY,
@@ -41,9 +48,9 @@ async def get_llm_response(messages: List[Dict[str, str]]) -> NpcResponse:
 
     try:
         logger.info(f"Sending request to Azure OpenAI (Deployment: {config.AZURE_OPENAI_DEPLOYMENT_NAME})...")
-        # logger.debug(f"Messages: {messages}") # Uncomment for detailed debugging
+        logger.debug(f"Messages: {messages}") # Uncomment for detailed debugging
 
-        response = await client.chat.completions.create(
+        response = client.chat.completions.create(
             model=config.AZURE_OPENAI_DEPLOYMENT_NAME, # Your deployment name
             messages=messages,
             temperature=0.7, # Adjust creativity (0.0 to 2.0)

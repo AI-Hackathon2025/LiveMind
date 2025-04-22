@@ -1,7 +1,7 @@
 from typing import List, Dict
 
-from .models import PlayerInput
-from . import config
+from models import PlayerInput
+import config
 
 def create_prompt_messages(player_input: PlayerInput) -> List[Dict[str, str]]:
     """

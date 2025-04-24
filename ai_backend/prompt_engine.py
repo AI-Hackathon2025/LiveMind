@@ -28,7 +28,12 @@ def create_prompt_messages(player_input: PlayerInput) -> List[Dict[str, str]]:
     # Add inventory information for more reliable responses.
     inventory_str = "\n".join([f"- {k.replace('_', ' ').capitalize()}: {v}" for k, v in player_input.inventory.items()])
     if not inventory_str:
-        inventory_str = "No specific inventory provided."  
+        inventory_str = "No specific inventory provided."
+
+    # Add equipped hotbar for more reliable responses.
+    hotbar_str = "\n".join([f"- {k.replace('_', ' ').capitalize()}: {v}" for k, v in player_input.equipped_hotbar.items()])
+    if not hotbar_str:
+        hotbar_str = "No specific Equipped Hotbar provided." 
 
     # Simple History Truncation: Keep only the last N turns (user + assistant)
     history_limit = config.MAX_HISTORY_LENGTH * 2 # Each turn has 2 entries
@@ -47,7 +52,9 @@ def create_prompt_messages(player_input: PlayerInput) -> List[Dict[str, str]]:
 
     **Player says:** "{player_input.player_input}"
 
-    **User inventory:** "{inventory_str}"
+    **Player Inventory:** "{inventory_str}"
+
+    **Player Equipped Hotbar:** "{hotbar_str}"
 
     Remember to respond ONLY with the JSON object containing npc_response, emotion, and dialogue_type.
     """

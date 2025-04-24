@@ -42,7 +42,7 @@ class PlayerInput(BaseModel):
     history: List[str] = Field(default_factory=list) # Dialogue history (e.g., ["NPC: Hi!", "Player: Looking to survive?"])
     context: Dict[str, str] = Field(default_factory=dict) # Game context (e.g., {"location": "Forest", "quest_status": "incomplete"})
     inventory: Dict[str, str] = Field(default_factory=dict)
-    equipped_hotbar: HotbarTool
+    equipped_hotbar: Dict[str, str] = Field(default_factory=dict)
     active_quest: Optional[QuestTool] = None
 
 class NpcResponse(BaseModel):

@@ -2,6 +2,10 @@ from typing import List, Dict
 
 from models import PlayerInput
 import config
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 def create_prompt_messages(player_input: PlayerInput) -> List[Dict[str, str]]:
     """
@@ -21,6 +25,11 @@ def create_prompt_messages(player_input: PlayerInput) -> List[Dict[str, str]]:
     if not context_str:
         context_str = "No specific context provided."
 
+    # Add inventory information for more reliable responses.
+    inventory_str = "\n".join([f"- {k.replace('_', ' ').capitalize()}: {v}" for k, v in player_input.inventory.items()])
+    if not inventory_str:
+        inventory_str = "No specific inventory provided."  
+
     # Simple History Truncation: Keep only the last N turns (user + assistant)
     history_limit = config.MAX_HISTORY_LENGTH * 2 # Each turn has 2 entries
     truncated_history = player_input.history[-history_limit:]
@@ -38,8 +47,10 @@ def create_prompt_messages(player_input: PlayerInput) -> List[Dict[str, str]]:
 
     **Player says:** "{player_input.player_input}"
 
+    **User inventory:** "{inventory_str}"
+
     Remember to respond ONLY with the JSON object containing npc_response, emotion, and dialogue_type.
     """
     messages.append({"role": "user", "content": user_content.strip()})
-
+    logger.info(inventory_str)
     return messages

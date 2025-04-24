@@ -51,6 +51,8 @@ Crafting System, use inventory items to craft:
   Tent = stick 6, plant 6, rope 6
   Raft = stick 6, plant 4, rope 6, log 8, requires multitool and tinderbox
 
+  NOTE: When you answer, please refer to User inventory to make more reliable responses.
+
 Mechanics:
   Use "TAB" to open inventory/crafting.
   Equip items in hotbar and use 1-9 keys to activate.

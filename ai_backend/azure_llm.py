@@ -51,11 +51,11 @@ async def get_llm_response(messages: List[Dict[str, str]]) -> NpcResponse:
         logger.debug(f"Messages: {messages}") # Uncomment for detailed debugging
 
         response = client.chat.completions.create(
-            model=config.AZURE_OPENAI_DEPLOYMENT_NAME, # Your deployment name
-            messages=messages,
-            temperature=0.7, # Adjust creativity (0.0 to 2.0)
-            max_tokens=150, # Adjust max response length
-            response_format={"type": "json_object"} # Request JSON output
+            model = config.AZURE_OPENAI_DEPLOYMENT_NAME, # Your deployment name
+            messages = messages,
+            temperature = config.LLM_TEMPERATURE,
+            max_tokens = config.LLM_MAX_TOKENS,
+            response_format = {"type": "json_object"} # Request JSON output
         )
 
         response_content = response.choices[0].message.content

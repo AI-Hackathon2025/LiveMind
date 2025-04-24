@@ -4,6 +4,9 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
+LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.4")) #  lower for less creativity
+LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "150")) # Adjust max response lengtH
+
 # Azure OpenAI Credentials
 AZURE_OPENAI_API_KEY = "48WPbYoIJjt5zFL4iKDY1UHGrDdP8uhyixEe3CHPwcG8OhM5Hu1OJQQJ99BDACfhMk5XJ3w3AAAAACOGgzoa";
 AZURE_OPENAI_ENDPOINT =  "https://dasun-m9oi4nso-swedencentral.openai.azure.com";

@@ -1,5 +1,12 @@
 # AiBackend
 
-conda activate aibackend
+First time, the following commands to create env:
+------------------------------------------------ 
+    $ conda env create -f env.yml
+    $ conda init
 
-uvicorn main:app --reload
+
+Usual Start up backend
+----------------------
+    $ conda activate aibackend
+    $ uvicorn main:app --reload

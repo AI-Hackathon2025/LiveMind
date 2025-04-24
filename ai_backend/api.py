@@ -49,7 +49,7 @@ async def generate_npc_response(
 
     # --- Get Response from LLM ---
     try:
-        npc_response_obj = await get_llm_response(messages)
+        npc_response_obj = await get_llm_response(messages, player_input)
     except Exception as e:
         # Catch any unexpected errors from the LLM call not handled internally
         logger.error(f"Unhandled error during LLM call: {e}", exc_info=True)

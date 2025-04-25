@@ -35,6 +35,11 @@ def create_prompt_messages(player_input: PlayerInput) -> List[Dict[str, str]]:
     if not hotbar_str:
         hotbar_str = "No specific Equipped Hotbar provided." 
 
+    # Add currently active quest.
+    current_quest_str = "\n".join([f"- {k.replace('_', ' ').capitalize()}: {v}" for k, v in player_input.active_quest.items()])
+    if not current_quest_str:
+        current_quest_str = "Current active quest is not set." 
+
     # Simple History Truncation: Keep only the last N turns (user + assistant)
     history_limit = config.MAX_HISTORY_LENGTH * 2 # Each turn has 2 entries
     truncated_history = player_input.history[-history_limit:]
@@ -55,6 +60,8 @@ def create_prompt_messages(player_input: PlayerInput) -> List[Dict[str, str]]:
     **Player Inventory:** "{inventory_str}"
 
     **Player Equipped Hotbar:** "{hotbar_str}"
+
+    **Player Currently Active Quest:** "{current_quest_str}"
 
     Remember to respond ONLY with the JSON object containing npc_response, emotion, and dialogue_type.
     """

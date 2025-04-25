@@ -64,6 +64,7 @@ async def get_llm_response(messages: List[Dict[str, str]]) -> NpcResponse:
 
         if not response_content:
              logger.warning("Received empty content from LLM. Returning fallback.")
+             #todo - add meaningful fallback message here
              return FallbackNpcResponse()
 
         # Parse the JSON string from the LLM response

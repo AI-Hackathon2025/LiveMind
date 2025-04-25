@@ -2,10 +2,6 @@ from typing import List, Dict
 
 from models import PlayerInput
 import config
-import logging
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 def create_prompt_messages(player_input: PlayerInput) -> List[Dict[str, str]]:
     """
@@ -66,5 +62,5 @@ def create_prompt_messages(player_input: PlayerInput) -> List[Dict[str, str]]:
     Remember to respond ONLY with the JSON object containing npc_response, emotion, and dialogue_type.
     """
     messages.append({"role": "user", "content": user_content.strip()})
-    logger.info(inventory_str)
+
     return messages

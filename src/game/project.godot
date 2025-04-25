@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 
 EventSystem="*res://game/event_system.gd"
 QuestManager="*res://game/managers/quest_manager.gd"
+InventoryManager="*res://game/managers/inventory_manager.gd"
+PlayerStatsManager="*res://game/managers/player_stats_manager.gd"
+DayNightManager="*res://game/managers/day_night_cycle_animation_player.gd"
 
 [display]
 

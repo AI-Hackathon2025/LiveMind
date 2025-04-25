@@ -82,15 +82,9 @@ func crafting_button_pressed(item_key: ItemConfig.Keys) -> void:
 	EventSystem.INV_add_item.emit(item_key)
 
 	# Dynamically build context for AI
-	var context := {
-		"event": "item_crafted",
-		"item_name": get_item_name_from_key(item_key),
-		"quantity": 1,
-		"location": "PlayerInventory",
-		"time": Time.get_datetime_string_from_system()
-	}
-		# Notify AI agent
-	EventSystem.AI_notify_agent_on_game_event.emit({"context": context})
+	var user_prompt = "Hi how are you"
+	# Notify AI agent
+	EventSystem.AI_notify_agent_on_user_prompt.emit(user_prompt)
 
 	# Update Quests
 	if item_key == ItemConfig.Keys.Rope:

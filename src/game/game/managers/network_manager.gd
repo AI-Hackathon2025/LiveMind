@@ -10,7 +10,7 @@ var prompt: String = "prompt"
 var conversation_history: Array[String] = []
 
 func _ready() -> void:
-	EventSystem.AI_notify_agent_on_game_event.connect(notify_agent_on_game_event)
+	EventSystem.AI_notify_agent_on_user_prompt.connect(notify_agent_on_user_prompt)
 	var err = ws.connect_to_url(SERVER_URL)
 	if err != OK:
 		print("Failed to connect to WebSocket server. Error:", err)
@@ -34,36 +34,36 @@ func _process(_delta: float) -> void:
 		var msg = ws.get_packet().get_string_from_utf8()
 		_on_message_received(msg)
 
-func notify_agent_on_game_event(event_data: Dictionary) -> void:
-	var context: Dictionary = event_data.get("context", {})
+func notify_agent_on_user_prompt(user_prompt: String) -> void:
+	var inventory_summary := {}
+	for item in InventoryManager.inventory:
+		if item != null:
+			var item_name = ItemConfig.enum_to_name(item)
+			inventory_summary[item_name] = inventory_summary.get(item_name, 0) + 1
+
+	var equipped_hotbar := {}
+	for i in range(InventoryManager.hotbar.size()):
+		var item = InventoryManager.hotbar[i]
+		var key = "slot_%d" % (i + 1)
+		equipped_hotbar[key] = ItemConfig.enum_to_name(item) if item != null else "empty"
+
+	var current_quest = QuestManager.quests[QuestManager.current_quest_index]
 
 	var json_data := {
-		"player_id": player_id,
-		"type": notification,
-		"player_input": null,
-		"history": conversation_history,
-		"context": context
-	}
-
-	var json_string := JSON.stringify(json_data)
-	if connected:
-		ws.send_text(json_string)
-		print("Sent to AI Agent:", json_string)
-	else:
-		print("Cannot send data: Not connected.")
-
-func notify_agent_on_user_prompt(event_data: Dictionary) -> void:
-	var player_input: String = event_data.get("player_input", "Something happened")
-	var context: Dictionary = event_data.get("context", {})
-
-	conversation_history.append("Player: " + player_input)
-
-	var json_data := {
-		"player_id": player_id,
-		"type": prompt,
-		"player_input": player_input,
-		"history": conversation_history,
-		"context": context
+		"player_id": "player123",
+		"player_input": user_prompt,
+		"inventory": inventory_summary,
+		"equipped_hotbar": equipped_hotbar,
+		"context": {
+			"health": "%d/100" % int(PlayerStatsManager.current_health),
+			"stamina": "%d/100" % int(PlayerStatsManager.current_energy),
+			"location": "forest",  # You can update this dynamically if needed
+			"time_of_day": DayNightManager.get_time_of_day()
+		},
+		"active_quest": {
+			"quest_id": current_quest["key"],
+			"description": current_quest["text"]
+		}
 	}
 
 	var json_string := JSON.stringify(json_data)

@@ -65,4 +65,4 @@ signal QU_show_quests
 signal QU_hide_quests
 
 # Signals for handling AI Agent
-signal AI_notify_agent_on_game_event
+signal AI_notify_agent_on_user_prompt

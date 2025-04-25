@@ -132,3 +132,7 @@ const CONSTRUCTABLE_ITEM_PATHS := {
 # Function to retrieve a constructable item's scene
 static func get_constructable_item(key: Keys) -> PackedScene:
 	return load(CONSTRUCTABLE_ITEM_PATHS.get(key))
+
+static func enum_to_name(enum_value: int) -> String:
+	# Converts enum int (e.g., 11) to string name (e.g., "Multitool")
+	return Keys.keys()[enum_value]

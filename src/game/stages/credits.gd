@@ -1,4 +1,5 @@
 extends Stage
+class_name Credits
 
 # This script handles stage-specific functionality, including exiting to the main menu
 # and handling input events.

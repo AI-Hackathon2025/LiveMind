@@ -1,4 +1,5 @@
 extends Stage
+class_name MainMenu
 
 # Function triggered when the "Start" button is pressed
 func _on_start_button_pressed() -> void:

@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4u4yc4d5p77a"]
+
+[ext_resource type="Texture2D" uid="uid://8yfmpbnqgako" path="res://assets/textures/panel_beige.png" id="1_tugm0"]
+[ext_resource type="Texture2D" uid="uid://cqdvvr7p5xeje" path="res://assets/textures/ai_agent_emotions/frustrated.png" id="2_q4smx"]
+
+[node name="AI_TextLine" type="TextureRect"]
+custom_minimum_size = Vector2(900, 100)
+offset_right = 909.0
+offset_bottom = 100.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 904.0
+offset_bottom = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+
+[node name="AIEmotion" type="TextureRect" parent="HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = -8.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.851532, 0.703053, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "There are no hacks available in this world—everything here relies on your survival skills and resourcefulness! If you want to progress, focus on gathering more resources like sticks, stones, or plants by exploring the forest and pressing 'E' to pick them up. Let me know if you need help crafting or finding anything!"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+offset_left = 19.0
+offset_top = 21.0
+offset_right = 79.0
+offset_bottom = 81.0
+texture = ExtResource("1_tugm0")
+expand_mode = 1
+
+[node name="AIEmotion" type="TextureRect" parent="TextureRect"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q4smx")
+expand_mode = 1

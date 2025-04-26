@@ -81,11 +81,6 @@ func crafting_button_pressed(item_key: ItemConfig.Keys) -> void:
 	# Add crafted item to the inventory
 	EventSystem.INV_add_item.emit(item_key)
 
-	# Dynamically build context for AI
-	var user_prompt = "Hi how are you"
-	# Notify AI agent
-	EventSystem.AI_notify_agent_on_user_prompt.emit(user_prompt)
-
 	# Update Quests
 	if item_key == ItemConfig.Keys.Rope:
 		EventSystem.QU_quest_finished.emit(QuestConfig.QuestKeys.WeaveRope)

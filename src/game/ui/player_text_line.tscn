@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc6dpxvu4l51r"]
+
+[ext_resource type="Texture2D" uid="uid://nrkvaspsbrui" path="res://assets/textures/panel_blue.png" id="1_rri52"]
+[ext_resource type="Texture2D" uid="uid://cgfgkilccxri8" path="res://assets/textures/player.png" id="3_8y5fr"]
+
+[node name="Player_TextLine" type="TextureRect"]
+custom_minimum_size = Vector2(800, 50)
+offset_right = 93.0
+offset_bottom = 94.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 900.0
+offset_bottom = 58.0
+theme_override_constants/separation = 35
+alignment = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "There are no hacks available in this world—everything here relies on your survival skills and resourcefulness! If you want to progress, focus on gathering more resources like sticks, stones, or plants by exploring the forest and pressing 'E' to pick them up. Let me know if you need help crafting or finding anything!"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 7.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+offset_left = 827.0
+offset_top = 15.0
+offset_right = 877.0
+offset_bottom = 65.0
+texture = ExtResource("1_rri52")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 5.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8y5fr")
+expand_mode = 1

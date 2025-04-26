@@ -66,3 +66,4 @@ signal QU_hide_quests
 
 # Signals for handling AI Agent
 signal AI_notify_agent_on_user_prompt
+signal AI_agent_prompt_recieved

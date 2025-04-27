@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4u4yc4d5p77a"]
+[gd_scene load_steps=3 format=3 uid="uid://dmoeojbdcbaip"]
 
 [ext_resource type="Texture2D" uid="uid://8yfmpbnqgako" path="res://assets/textures/panel_beige.png" id="1_tugm0"]
 [ext_resource type="Texture2D" uid="uid://cqdvvr7p5xeje" path="res://assets/textures/ai_agent_emotions/frustrated.png" id="2_q4smx"]

@@ -23,49 +23,49 @@ func _ready() -> void:
 	inventory.resize(INVENTORY_SIZE)
 	hotbar.resize(HOTBAR_SIZE)
 	
-	# TEMPORARY: Pre-filling inventory with items for testing
-	inventory[0] = ItemConfig.Keys.Axe
-	inventory[1] = ItemConfig.Keys.Pickaxe
-	inventory[2] = ItemConfig.Keys.Tent
-	inventory[3] = ItemConfig.Keys.Campfire
-	inventory[4] = ItemConfig.Keys.RawMeat
-	inventory[5] = ItemConfig.Keys.Tinderbox
-	inventory[6] = ItemConfig.Keys.Multitool
-	inventory[7] = ItemConfig.Keys.Rope
-	inventory[8] = ItemConfig.Keys.Stick
-	inventory[9] = ItemConfig.Keys.Rope
-	inventory[10] = ItemConfig.Keys.Raft
-	inventory[11] = ItemConfig.Keys.Stick
-	inventory[12] = ItemConfig.Keys.Stick
-	inventory[13] = ItemConfig.Keys.Stick
-	inventory[14] = ItemConfig.Keys.Stick
-	inventory[15] = ItemConfig.Keys.Stick
-	inventory[16] = ItemConfig.Keys.Stick
-	inventory[17] = ItemConfig.Keys.Stick
-	inventory[18] = ItemConfig.Keys.Stick
-	inventory[19] = ItemConfig.Keys.Stone
-	inventory[20] = ItemConfig.Keys.Stick
-	inventory[21] = ItemConfig.Keys.Stick
-	inventory[22] = ItemConfig.Keys.Stick
-	inventory[23] = ItemConfig.Keys.Stone
-	inventory[24] = ItemConfig.Keys.Stone
-	inventory[25] = ItemConfig.Keys.Stone
-	inventory[26] = ItemConfig.Keys.Stone
-	inventory[27] = ItemConfig.Keys.Stone
-	inventory[28] = ItemConfig.Keys.Stone
-	inventory[29] = ItemConfig.Keys.Plant
-	inventory[30] = ItemConfig.Keys.Plant
-	inventory[31] = ItemConfig.Keys.Plant
-	inventory[32] = ItemConfig.Keys.Plant
-	inventory[33] = ItemConfig.Keys.Plant
-	inventory[34] = ItemConfig.Keys.Plant
-	inventory[35] = ItemConfig.Keys.Plant
-	inventory[36] = ItemConfig.Keys.Plant
-	inventory[37] = ItemConfig.Keys.Plant
-	inventory[38] = ItemConfig.Keys.Plant
-	inventory[39] = ItemConfig.Keys.Plant
-	
-	print("Inventory: ", inventory)
+	## TEMPORARY: Pre-filling inventory with items for testing
+	#inventory[0] = ItemConfig.Keys.Axe
+	#inventory[1] = ItemConfig.Keys.Pickaxe
+	#inventory[2] = ItemConfig.Keys.Tent
+	#inventory[3] = ItemConfig.Keys.Campfire
+	#inventory[4] = ItemConfig.Keys.RawMeat
+	#inventory[5] = ItemConfig.Keys.Tinderbox
+	#inventory[6] = ItemConfig.Keys.Multitool
+	#inventory[7] = ItemConfig.Keys.Rope
+	#inventory[8] = ItemConfig.Keys.Stick
+	#inventory[9] = ItemConfig.Keys.Rope
+	#inventory[10] = ItemConfig.Keys.Raft
+	#inventory[11] = ItemConfig.Keys.Stick
+	#inventory[12] = ItemConfig.Keys.Stick
+	#inventory[13] = ItemConfig.Keys.Stick
+	#inventory[14] = ItemConfig.Keys.Stick
+	#inventory[15] = ItemConfig.Keys.Stick
+	#inventory[16] = ItemConfig.Keys.Stick
+	#inventory[17] = ItemConfig.Keys.Stick
+	#inventory[18] = ItemConfig.Keys.Stick
+	#inventory[19] = ItemConfig.Keys.Stone
+	#inventory[20] = ItemConfig.Keys.Stick
+	#inventory[21] = ItemConfig.Keys.Stick
+	#inventory[22] = ItemConfig.Keys.Stick
+	#inventory[23] = ItemConfig.Keys.Stone
+	#inventory[24] = ItemConfig.Keys.Stone
+	#inventory[25] = ItemConfig.Keys.Stone
+	#inventory[26] = ItemConfig.Keys.Stone
+	#inventory[27] = ItemConfig.Keys.Stone
+	#inventory[28] = ItemConfig.Keys.Stone
+	#inventory[29] = ItemConfig.Keys.Plant
+	#inventory[30] = ItemConfig.Keys.Plant
+	#inventory[31] = ItemConfig.Keys.Plant
+	#inventory[32] = ItemConfig.Keys.Plant
+	#inventory[33] = ItemConfig.Keys.Plant
+	#inventory[34] = ItemConfig.Keys.Plant
+	#inventory[35] = ItemConfig.Keys.Plant
+	#inventory[36] = ItemConfig.Keys.Plant
+	#inventory[37] = ItemConfig.Keys.Plant
+	#inventory[38] = ItemConfig.Keys.Plant
+	#inventory[39] = ItemConfig.Keys.Plant
+	#
+	#print("Inventory: ", inventory)
 
 
 # Notify the system that the inventory has been updated

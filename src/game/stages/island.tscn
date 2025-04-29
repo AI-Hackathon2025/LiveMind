@@ -28099,11 +28099,9 @@ transform = Transform3D(0.993987, 0, -0.109492, 0, 1, 0, 0.109492, 0, 0.993987, 
 
 [node name="Cow3" parent="Actors" instance=ExtResource("11_m22b5")]
 transform = Transform3D(-0.589929, 0, 0.807455, 0, 1, 0, -0.807455, 0, -0.589929, 22.6601, -1.66893e-06, 24.8676)
-is_aggresive = true
 
 [node name="Cow4" parent="Actors" instance=ExtResource("11_m22b5")]
 transform = Transform3D(0.390426, 0, 0.920634, 0, 1, 0, -0.920634, 0, 0.390426, -9.67039, -1.90735e-06, -15.6691)
-is_aggresive = true
 
 [node name="Cow5" parent="Actors" instance=ExtResource("11_m22b5")]
 transform = Transform3D(0.993987, 0, -0.109492, 0, 1, 0, 0.109492, 0, 0.993987, -9.22135, -1.90735e-06, -18.0904)
@@ -28122,30 +28120,6 @@ transform = Transform3D(-0.295958, 0, 0.955201, 0, 1, 0, -0.955201, 0, -0.295958
 
 [node name="Wolf4" parent="Actors" instance=ExtResource("12_gxn0q")]
 transform = Transform3D(0.0440034, 0, 0.999031, 0, 1, 0, -0.999031, 0, 0.0440034, 14.444, -1.78814e-06, -52.3107)
-
-[node name="Wolf5" parent="Actors" instance=ExtResource("12_gxn0q")]
-transform = Transform3D(0.594289, 0, 0.804251, 0, 1, 0, -0.804251, 0, 0.594289, -26.0421, -1.66893e-06, 34.5025)
-
-[node name="Wolf6" parent="Actors" instance=ExtResource("12_gxn0q")]
-transform = Transform3D(0.109769, 0, -0.993957, 0, 1, 0, 0.993957, 0, 0.109769, -28.1579, -1.72853e-06, 29.5606)
-
-[node name="Wolf7" parent="Actors" instance=ExtResource("12_gxn0q")]
-transform = Transform3D(0.861408, 0, -0.507914, 0, 1, 0, 0.507914, 0, 0.861408, -27.8653, -1.78814e-06, 32.143)
-
-[node name="Wolf8" parent="Actors" instance=ExtResource("12_gxn0q")]
-transform = Transform3D(0.992191, 0, -0.124728, 0, 1, 0, 0.124728, 0, 0.992191, -27.0968, -1.78814e-06, 33.3382)
-
-[node name="Wolf9" parent="Actors" instance=ExtResource("12_gxn0q")]
-transform = Transform3D(-0.159571, 0, 0.987186, 0, 1, 0, -0.987186, 0, -0.159571, 47.6461, -3.57628e-06, 20.3353)
-
-[node name="Wolf10" parent="Actors" instance=ExtResource("12_gxn0q")]
-transform = Transform3D(-0.274664, 0, 0.96154, 0, 1, 0, -0.96154, 0, -0.274664, 45.5225, -4.52995e-06, 21.654)
-
-[node name="Wolf11" parent="Actors" instance=ExtResource("12_gxn0q")]
-transform = Transform3D(-0.295958, 0, 0.955201, 0, 1, 0, -0.955201, 0, -0.295958, 45.7325, -3.69549e-06, 20.0575)
-
-[node name="Wolf12" parent="Actors" instance=ExtResource("12_gxn0q")]
-transform = Transform3D(0.0440034, 0, 0.999031, 0, 1, 0, -0.999031, 0, 0.0440034, 48.0336, 0.00891781, 18.3323)
 
 [node name="DayNightController" type="Node" parent="."]
 

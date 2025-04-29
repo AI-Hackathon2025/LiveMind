@@ -101,6 +101,7 @@ libraries = {
 autoplay = "credits_animation"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5

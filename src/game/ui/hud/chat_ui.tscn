@@ -9,7 +9,7 @@
 
 [sub_resource type="Gradient" id="Gradient_qounm"]
 offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0, 0, 0, 0.25098)
+colors = PackedColorArray(0, 0, 0, 0.392157)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_68olm"]
 gradient = SubResource("Gradient_qounm")
@@ -26,55 +26,27 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_xdbnv")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(920, 590)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -920.0
-offset_bottom = 590.0
-grow_horizontal = 0
-texture = SubResource("GradientTexture2D_68olm")
-
-[node name="Control" type="Control" parent="."]
+[node name="AILiveChat" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -936.0
-offset_bottom = 632.0
+offset_bottom = 290.0
 grow_horizontal = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+[node name="GreyBGLiveChat" type="TextureRect" parent="AILiveChat"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -774.0
-offset_bottom = 521.0
+offset_left = -870.0
+offset_top = 65.0
+offset_bottom = 171.0
 grow_horizontal = 0
-horizontal_scroll_mode = 0
+texture = SubResource("GradientTexture2D_68olm")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 32
-alignment = 2
-
-[node name="Player_TextLine" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("4_5ai06")]
-layout_mode = 2
-
-[node name="AI_TextLine" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("3_lqbwu")]
-layout_mode = 2
-
-[node name="Player_TextLine2" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("4_5ai06")]
-layout_mode = 2
-
-[node name="AI_TextLine2" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("3_lqbwu")]
-layout_mode = 2
-
-[node name="ChatField" type="TextureRect" parent="Control"]
+[node name="ChatField" type="TextureRect" parent="AILiveChat"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -86,16 +58,16 @@ offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button" type="Button" parent="Control/ChatField"]
+[node name="Button" type="Button" parent="AILiveChat/ChatField"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -88.0
+offset_left = -139.0
 offset_top = -25.0
-offset_right = -28.0
+offset_right = -64.0
 offset_bottom = 26.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -103,33 +75,127 @@ theme_override_font_sizes/font_size = 15
 text = "Send"
 icon_alignment = 2
 
-[node name="LineEdit" type="LineEdit" parent="Control/ChatField"]
+[node name="LineEdit" type="LineEdit" parent="AILiveChat/ChatField"]
 layout_mode = 0
-offset_left = 27.0
+offset_left = 64.0
 offset_top = -2.0
-offset_right = 833.0
+offset_right = 786.0
 offset_bottom = 49.0
 theme_override_font_sizes/font_size = 15
 placeholder_text = "Enter Your Message..."
 
-[node name="AIEmotion" type="TextureRect" parent="."]
-visible = false
-offset_left = 821.0
-offset_top = 8.0
-offset_right = 998.0
-offset_bottom = 160.0
+[node name="CloseButton" type="Button" parent="AILiveChat"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_top = 184.0
+offset_right = 55.0
+offset_bottom = 292.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_o4cka")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AILiveChat"]
+layout_mode = 2
+offset_left = 28.0
+offset_top = 65.0
+offset_right = 928.0
+offset_bottom = 165.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+alignment = 2
+
+[node name="AI_TextLine" parent="AILiveChat/VBoxContainer" instance=ExtResource("3_lqbwu")]
+layout_mode = 2
+
+[node name="AIEmotion" type="TextureRect" parent="AILiveChat"]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 12.0
+offset_right = 127.0
+offset_bottom = 158.0
 texture = ExtResource("3_iypit")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="CloseButton" type="Button" parent="."]
+[node name="History" type="Control" parent="."]
+visible = false
+custom_minimum_size = Vector2(900, 800)
+layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -78.0
-offset_top = 17.0
-offset_right = 30.0
-offset_bottom = 125.0
+offset_left = -846.0
+offset_bottom = 514.0
+grow_horizontal = 0
+
+[node name="GreyBGHistory" type="TextureRect" parent="History"]
+custom_minimum_size = Vector2(900, 800)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -908.0
+offset_bottom = 139.0
+grow_horizontal = 0
+texture = SubResource("GradientTexture2D_68olm")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="History"]
+custom_minimum_size = Vector2(900, 800)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -908.0
+offset_top = 1.0
+offset_bottom = 801.0
+grow_horizontal = 0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="History/ScrollContainer"]
+custom_minimum_size = Vector2(900, 800)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="AI_TextLine2" parent="History/ScrollContainer/VBoxContainer" instance=ExtResource("3_lqbwu")]
+visible = false
+layout_mode = 2
+
+[node name="Player_TextLine" parent="History/ScrollContainer/VBoxContainer" instance=ExtResource("4_5ai06")]
+visible = false
+layout_mode = 2
+
+[node name="AI_TextLine3" parent="History/ScrollContainer/VBoxContainer" instance=ExtResource("3_lqbwu")]
+visible = false
+layout_mode = 2
+
+[node name="Player_TextLine2" parent="History/ScrollContainer/VBoxContainer" instance=ExtResource("4_5ai06")]
+visible = false
+layout_mode = 2
+
+[node name="AI_TextLine4" parent="History/ScrollContainer/VBoxContainer" instance=ExtResource("3_lqbwu")]
+visible = false
+layout_mode = 2
+
+[node name="Player_TextLine3" parent="History/ScrollContainer/VBoxContainer" instance=ExtResource("4_5ai06")]
+visible = false
+layout_mode = 2
+
+[node name="CloseButtonH" type="Button" parent="History"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -66.0
+offset_top = 14.0
+offset_right = 42.0
+offset_bottom = 122.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 icon = ExtResource("4_o4cka")

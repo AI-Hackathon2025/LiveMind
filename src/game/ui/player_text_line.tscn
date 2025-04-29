@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cgfgkilccxri8" path="res://assets/textures/player.png" id="3_8y5fr"]
 
 [node name="Player_TextLine" type="TextureRect"]
-custom_minimum_size = Vector2(800, 50)
+custom_minimum_size = Vector2(800, 100)
 offset_right = 93.0
 offset_bottom = 94.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(50, 100)
 layout_mode = 0
 offset_right = 900.0
 offset_bottom = 58.0
@@ -19,7 +19,7 @@ alignment = 2
 [node name="Label" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(800, 80)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.448783, 1, 0.99706, 1)
 theme_override_font_sizes/font_size = 15
 text = "There are no hacks available in this world—everything here relies on your survival skills and resourcefulness! If you want to progress, focus on gathering more resources like sticks, stones, or plants by exploring the forest and pressing 'E' to pick them up. Let me know if you need help crafting or finding anything!"
 horizontal_alignment = 2

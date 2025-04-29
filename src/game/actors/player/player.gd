@@ -120,6 +120,7 @@ func look_around(relative: Vector2) -> void:
 func _unhandled_key_input(event: InputEvent) -> void:
 	# Opens the pause menu when "ui_cancel" is pressed
 	if event.is_action_pressed("ui_cancel"):
+		ChatManager.instance.hide_ai_prompt()
 		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PauseMenu)
 		set_freeze(true)
 

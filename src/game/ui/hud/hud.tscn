@@ -109,6 +109,7 @@ tint_under = Color(0.203922, 0.203922, 0.203922, 1)
 tint_progress = Color(1, 0.760784, 0.360784, 1)
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 offset_left = 32.0
 offset_top = 32.0

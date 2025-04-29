@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7y1jgh41a3b6"]
+[gd_scene load_steps=9 format=3 uid="uid://c7y1jgh41a3b6"]
 
 [ext_resource type="Script" path="res://game/managers/stage_controller.gd" id="1_j2xqg"]
 [ext_resource type="Script" path="res://game/managers/hud_controller.gd" id="2_7vpu1"]
 [ext_resource type="Script" path="res://game/managers/music_controller.gd" id="4_ee56w"]
+[ext_resource type="PackedScene" uid="uid://85ftlvoy02lr" path="res://ui/hud/chat_ui.tscn" id="5_gvsi0"]
 [ext_resource type="Script" path="res://game/managers/sfx_controller.gd" id="5_qbqfc"]
 [ext_resource type="Script" path="res://game/managers/game_fade_controller.gd" id="6_xtcbe"]
 [ext_resource type="PackedScene" uid="uid://dwe21tfxgtrxf" path="res://ui/hud/hud.tscn" id="8_kl10b"]
@@ -22,6 +23,10 @@ script = ExtResource("2_7vpu1")
 
 [node name="BulletinController" type="Node" parent="UILayer"]
 script = ExtResource("9_bv1e8")
+
+[node name="Chat" type="Node" parent="UILayer"]
+
+[node name="CanvasLayer" parent="UILayer/Chat" instance=ExtResource("5_gvsi0")]
 
 [node name="MusicController" type="AudioStreamPlayer" parent="."]
 script = ExtResource("4_ee56w")

@@ -204,7 +204,7 @@ func _update_ai_emotion(emotion: String) -> void:
 			ai_emotion_livechat.texture = FRUSTRATED
 		"happy":
 			ai_emotion_livechat.texture = HAPPY
-		"sad":
+		"worried":
 			ai_emotion_livechat.texture = SAD
 		"thinking":
 			ai_emotion_livechat.texture = THINKING
@@ -219,7 +219,7 @@ func _get_emotion_texture(emotion: String) -> Texture:
 			return FRUSTRATED
 		"happy":
 			return HAPPY
-		"sad":
+		"worried":
 			return SAD
 		"thinking":
 			return THINKING

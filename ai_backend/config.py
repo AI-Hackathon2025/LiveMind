@@ -8,7 +8,7 @@ LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.4")) #  lower for less c
 LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "150")) # Adjust max response lengtH
 
 # Azure OpenAI Credentials
-AZURE_OPENAI_API_KEY = "48WPbYoIJjt5zFL4iKDY1UHGrDdP8uhyixEe3CHPwcG8OhM5Hu1OJQQJ99BDACfhMk5XJ3w3AAAAACOGgzoa";
+AZURE_OPENAI_API_KEY = "";
 AZURE_OPENAI_ENDPOINT =  "https://dasun-m9oi4nso-swedencentral.openai.azure.com";
 AZURE_OPENAI_DEPLOYMENT_NAME = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "mygpt-4.1") # Your deployment name for GPT-4o
 AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview") # Use an appropriate API version

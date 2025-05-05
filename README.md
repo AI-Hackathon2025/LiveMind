@@ -8,9 +8,6 @@ LiveMind is a survival game that leverages an AI-powered backend to provide imme
 ## Directory Structure
 ```
 LiveMind/
-├── LICENSE
-├── readme_guide.txt
-├── README.md
 ├── ai_backend/
 │   ├── __init__.py
 │   ├── api.py
@@ -25,8 +22,6 @@ LiveMind/
 │   ├── ws_adapter.py
 │   └── __pycache__/
 ├── src/
-│   ├── ai_backend/
-│   │   └── main.cpp/
 │   └── game/
 │       ├── actors/
 │       │   ├── animals/
@@ -40,23 +35,15 @@ LiveMind/
 │       │   ├── configs/
 │       │   └── managers/
 │       ├── items/
-│       │   ├── equippables/
-│       │   └── interactables/
 │       ├── objects/
-│       │   ├── constructables/
-│       │   ├── hitbox/
-│       │   └── hittable_objects/
 │       ├── particles/
 │       ├── resources/
-│       │   ├── cooking_recipes/
-│       │   ├── crafting_blueprint_resources/
-│       │   ├── hittable_object_attributes/
 │       │   ├── item_resources/
 │       │   └── materials/
 │       ├── stages/
 │       └── ui/
-│           ├── custom_nodes/
-│           └── hud/
+├── README.md
+└── LICENSE
 ```
 
 ## Prerequisites
